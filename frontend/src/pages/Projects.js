@@ -54,7 +54,7 @@ const Projects = () => {
               
               <div>
                 <div className="mb-6">
-                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="px-3 py-1 rounded-full text-sm font-semibold text-white" style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`}}>
                     {project.category}
                   </span>
                   <span className={`ml-2 px-3 py-1 rounded-full text-sm font-semibold ${
@@ -91,7 +91,7 @@ const Projects = () => {
                 <ul className="space-y-2">
                   {project.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-gray-600">
-                      <svg className="w-5 h-5 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" style={{color: '#FFF200'}}>
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       {feature}
@@ -104,7 +104,8 @@ const Projects = () => {
             <div className="mt-8 text-center">
               <Button 
                 asChild
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold px-8 py-3"
+                className="font-semibold px-8 py-3 border-0"
+                style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`, color: 'white'}}
               >
                 <Link to="/contato">Solicitar Projeto Similar</Link>
               </Button>
@@ -118,12 +119,12 @@ const Projects = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-20">
+      <section className="py-20" style={{background: `linear-gradient(135deg, rgba(55, 71, 129, 0.1) 0%, rgba(255, 242, 0, 0.1) 100%)`}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Nossos 
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
+              <span className="block text-transparent bg-clip-text" style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`, WebkitBackgroundClip: 'text', color: 'transparent'}}>
                 Projetos
               </span>
             </h1>
@@ -139,9 +140,10 @@ const Projects = () => {
                   onClick={() => setFilter(category)}
                   className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                     filter === category
-                      ? 'bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-orange-50 border border-gray-200'
+                      ? 'text-white shadow-lg'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
                   }`}
+                  style={filter === category ? {background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`} : {}}
                 >
                   {category}
                 </button>
@@ -168,7 +170,7 @@ const Projects = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <span className="text-white px-3 py-1 rounded-full text-sm font-semibold" style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`}}>
                       {project.category}
                     </span>
                   </div>
@@ -196,7 +198,7 @@ const Projects = () => {
                     </div>
                   </div>
                   <div className="mt-4">
-                    <Button variant="link" className="text-orange-600 p-0 font-semibold">
+                    <Button variant="link" className="p-0 font-semibold" style={{color: '#374781'}}>
                       Ver detalhes →
                     </Button>
                   </div>
@@ -208,7 +210,7 @@ const Projects = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-red-700">
+      <section className="py-20" style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -225,7 +227,7 @@ const Projects = () => {
             ].map((stat, index) => (
               <div key={index}>
                 <div className="text-4xl lg:text-6xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-orange-100 font-semibold">{stat.label}</div>
+                <div className="text-gray-100 font-semibold">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -237,7 +239,7 @@ const Projects = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Seu Projeto Pode Ser o
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
+            <span className="block text-transparent bg-clip-text" style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`, WebkitBackgroundClip: 'text', color: 'transparent'}}>
               Próximo Destaque
             </span>
           </h2>
@@ -248,7 +250,8 @@ const Projects = () => {
           <Button 
             asChild
             size="lg"
-            className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+            className="font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 border-0"
+            style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`, color: 'white'}}
           >
             <Link to="/contato">Iniciar Meu Projeto</Link>
           </Button>

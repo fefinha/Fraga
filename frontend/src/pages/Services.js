@@ -8,12 +8,12 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-50 to-red-50 py-20">
+      <section className="py-20" style={{background: `linear-gradient(135deg, rgba(55, 71, 129, 0.1) 0%, rgba(255, 242, 0, 0.1) 100%)`}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Nossos 
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
+              <span className="block text-transparent bg-clip-text" style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`, WebkitBackgroundClip: 'text', color: 'transparent'}}>
                 Serviços
               </span>
             </h1>
@@ -47,7 +47,7 @@ const Services = () => {
                           <h3 className="text-2xl font-bold text-gray-900 mb-1">
                             {service.title}
                           </h3>
-                          <p className="text-orange-600 font-semibold">
+                          <p className="font-semibold" style={{color: '#374781'}}>
                             {service.subtitle}
                           </p>
                         </div>
@@ -58,7 +58,7 @@ const Services = () => {
                       <ul className="space-y-2 mb-6">
                         {service.features.slice(0, 3).map((feature, idx) => (
                           <li key={idx} className="flex items-center text-gray-600">
-                            <svg className="w-5 h-5 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" style={{color: '#FFF200'}}>
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                             </svg>
                             {feature}
@@ -68,7 +68,8 @@ const Services = () => {
                     </div>
                     <Button 
                       asChild
-                      className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-semibold"
+                      className="font-semibold border-0"
+                      style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`, color: 'white'}}
                     >
                       <Link to="/contato">Solicitar Orçamento</Link>
                     </Button>
@@ -86,7 +87,7 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Por Que Escolher a 
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
+              <span className="block text-transparent bg-clip-text" style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`, WebkitBackgroundClip: 'text', color: 'transparent'}}>
                 Fraga Construções?
               </span>
             </h2>
@@ -126,19 +127,20 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-red-700">
+      <section className="py-20" style={{background: `linear-gradient(135deg, #374781 0%, #FFF200 100%)`}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Pronto para Começar?
           </h2>
-          <p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto">
             Entre em contato conosco e receba uma proposta personalizada para seu projeto.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               asChild
               size="lg"
-              className="bg-white text-orange-600 hover:bg-gray-100 font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 border-0"
+              style={{backgroundColor: 'white', color: '#374781'}}
             >
               <Link to="/contato">Solicitar Orçamento</Link>
             </Button>
@@ -146,7 +148,8 @@ const Services = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-white text-white hover:bg-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+              style={{'&:hover': {backgroundColor: 'white', color: '#374781'}}}
             >
               <Link to="/projetos">Ver Projetos</Link>
             </Button>
